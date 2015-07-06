@@ -1,10 +1,11 @@
 .b-search-options {
+
   position: relative;
 
   display: inline-block;
   zoom: 1;
 
-  min-width: 150px;
+  width: 400px;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -12,6 +13,10 @@
   vertical-align: middle;
 
   font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.b-search-options * {
+box-sizing: border-box;
 }
 
 .b-shown-options {
@@ -31,7 +36,25 @@
   background: #fff linear-gradient(#eeeeee 1%, #ffffff 15%);
 }
 
-
+.b-shown-options_state_positive,
+.b-shown-options_state_negative{
+  position: relative;
+  padding: 0 0 0 22px;
+}
+.b-shown-options_state_positive:after ,
+.b-shown-options_state_negative:after {
+  position: absolute;
+  width: 18px;
+  border-right: 1px solid #ccc;
+  left: 0;
+  top: 0;
+}
+.b-shown-options_state_positive:after {
+  content: url(../images/green_check.png);
+}
+.b-shown-options_state_negative:after {
+  content: url(../images/red_cross.png);
+}
 .b-shown-option {
   float: left;
 
@@ -62,7 +85,7 @@
 }
 
 .b-shown-option__input {
-  height: 15px;
+  height: 24px;
   margin: 1px 0;
   padding: 5px;
 
