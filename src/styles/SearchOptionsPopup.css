@@ -1,0 +1,29 @@
+.b-popup
+{
+  position: absolute;
+  top: 20px;
+
+  overflow: hidden;
+
+  transition: width 350ms cubic-bezier(.23, .5, .32, 1), height 350ms cubic-bezier(.23, .5, .32, 1), left 350ms cubic-bezier(.23, .5, .32, 1), top 350ms cubic-bezier(.23, .5, .32, 1), opacity 350ms cubic-bezier(.23, .5, .32, 1);
+
+  opacity: 1;
+  border: 1px solid rgb(170, 170, 170);
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, .298039) 0 2px 2px;
+}
+
+.b-search-options__list{
+  max-height: 200px;
+  overflow: auto;
+}
+
+.b-search-options__list_item{
+margin: 0;
+position: relative;
+display: block;
+padding: 7px 10px;
+font-weight: normal;
+color: #333;
+white-space: nowrap;
+}

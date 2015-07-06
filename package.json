@@ -37,7 +37,8 @@
     "url-loader": "^0.5.5",
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "csscomb":"^1.0"
   },
   "dependencies": {
     "react": "^0.13.0"

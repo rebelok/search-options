@@ -3,10 +3,20 @@
  */
 import React, { Component } from 'react';
 import ShownOption from './ShownOption';
+import SearchOptionsPopup from './SearchOptionsPopup';
+
 import './styles/shownOption.css';
 
 const log = console.log.bind(console, 'SOC:');
-
+const isNodeInRoot=(node, root)=> {
+  while (node) {
+    if (node === root) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+}
 export default
 class SearchOptionsControl extends Component {
   constructor(props) {
@@ -17,16 +27,19 @@ class SearchOptionsControl extends Component {
   }
 
   handleFilterChange(e) {
-    var value = e.target.value;
-    this.setState({filterText: value});
+    this.setState({filterText: e.target.value});
   }
 
-  _filterYes(item) {
+  filterYes(item) {
     return item.state === 1;
   }
 
-  _filterShown(item) {
+  filterShown(item) {
     return item.state > 0;
+  }
+
+  filterFn(item) {
+    return item[this.props.optionFilterProp].indexOf(this.state.filterText) > -1;
   }
 
   changeState(id, newState) {
@@ -45,25 +58,66 @@ class SearchOptionsControl extends Component {
     this.setState({options: options})
   }
 
+  setPopupState(newState) {
+    if (newState) {
+      this.bindRootCloseHandlers();
+    } else {
+      this.unbindRootCloseHandlers();
+    }
+    this.setState({open: newState});
+  }
+
+  handleDocumentKeyUp(e) {
+    if (e.keyCode === 27) {
+      this.setPopupState(false);
+    }
+  }
+
+  handleDocumentClick(e) {
+    // If the click originated from within this component
+    // don't do anything.
+    if (isNodeInRoot(e.target, React.findDOMNode(this))) {
+      return;
+    }
+
+    this.setPopupState(false);
+  }
+
+
+
+  bindRootCloseHandlers() {
+    document.addEventListener('click', this.handleDocumentClick);
+    document.addEventListener('keyup', this.handleDocumentKeyUp);
+  }
+
+  unbindRootCloseHandlers() {
+    document.removeEventListener('click', this.handleDocumentClick);
+    document.removeEventListener('keyup', this.handleDocumentKeyUp);
+  }
+
+  componentWillUnmount() {
+    this.unbindRootCloseHandlers();
+  }
+
   render() {
 
     let mainCss = 'b-search-options' + (this.state.Open ? ' b-search-options_state_open' : '');
-    let filterText = this.state.filterText;
     log(this.state);
     return (
       <div className={mainCss}>
         <ul className="b-shown-options">
         {
-          this.state.options.filter(this._filterShown).map(
+          this.state.options.filter(this.filterShown).map(
               option => {
               return (<ShownOption key={option.Id} name={option.Name} remove={this.changeState.bind(this, option.Id, 0)}/>);
             })
           }
           <li className="b-shown-option b-shown-option_type_input">
-            <input className="b-shown-option__input" type="text" value={filterText} onChange={this.handleFilterChange} />
+            <input className="b-shown-option__input" type="text" onFocus={this.setPopupState.bind(this,true)} value={this.state.filterText} onChange={this.handleFilterChange.bind(this)} />
           </li>
         </ul>
-      {this.state.open ? null
+      {this.state.open ?
+<SearchOptionsPopup options={this.state.options.filter(this.filterFn.bind(this))}  />
         :
         null
         }
