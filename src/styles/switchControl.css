@@ -1,0 +1,31 @@
+.b-switch__row{
+    display:flex;
+    justify-content:space-between;
+    flex: auto 1 0;
+    line-height: 24px;
+    cursor:pointer;
+}
+
+.b-switch{
+    outline: none;
+    height:24px;
+    width:70px;
+    border: none;
+    background: no-repeat right center;
+}
+.b-switch_type_2{
+    background-image: url(../images/Switch_2_0.png);
+}
+.b-switch_type_3{
+    background-image: url(../images/Switch_3_0.png);
+}
+
+.b-switch_state_1.b-switch_type_2{
+     background-image: url(../images/Switch_2_1.png);
+ }
+.b-switch_state_1.b-switch_type_3{
+    background-image: url(../images/Switch_3_1.png);
+}
+.b-switch_state_2.b-switch_type_3{
+    background-image: url(../images/Switch_3_2.png);
+}

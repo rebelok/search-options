@@ -1,0 +1,129 @@
+.b-search-options {
+
+  position: relative;
+
+  display: inline-block;
+  zoom: 1;
+
+  width: 400px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.b-search-options * {
+box-sizing: border-box;
+}
+
+.b-shown-options {
+  position: relative;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+
+  cursor: text;
+
+  border: 1px solid #aaa;
+  background: #fff linear-gradient(#eeeeee 1%, #ffffff 15%);
+}
+
+.b-shown-options_state_positive,
+.b-shown-options_state_negative{
+  position: relative;
+  padding: 0 0 0 22px;
+}
+.b-shown-options_state_positive:after ,
+.b-shown-options_state_negative:after {
+  position: absolute;
+  width: 18px;
+  border-right: 1px solid #ccc;
+  left: 0;
+  top: 0;
+}
+.b-shown-options_state_positive:after {
+  content: url(../images/green_check.png);
+}
+.b-shown-options_state_negative:after {
+  content: url(../images/red_cross.png);
+}
+.b-shown-option {
+  float: left;
+
+  list-style: none;
+}
+.b-shown-option_type_input{
+  margin: 0;
+  padding: 0;
+
+  white-space: nowrap;
+}
+.b-shown-option_type_item{
+  position: relative;
+
+  margin: 3px 0 3px 5px;
+  padding: 3px 20px 3px 5px;
+
+  cursor: default;
+
+  color: #333;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: #e4e4e4 linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+
+  line-height: 13px;
+}
+
+.b-shown-option__input {
+  height: 24px;
+  margin: 1px 0;
+  padding: 5px;
+
+  color: #333;
+  border: 0 !important;
+  border-radius: 0;
+  outline: 0;
+  background: transparent !important;
+  box-shadow: none;
+
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: normal;
+}
+
+.b-shown-option__remove {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+
+  display: block;
+
+  width: 12px;
+  height: 12px;
+
+  background: url(../images/chosen-sprite.png) -42px 1px no-repeat;
+
+  font-size: 1px;
+}
+.b-shown-option__remove:hover {
+  background-position: -42px -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .b-shown-option__remove {
+    background: url(../images/chosen-sprite@2x.png) no-repeat !important;
+    background-size: 52px 37px !important;
+  }
+}
+
+
