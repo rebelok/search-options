@@ -2,11 +2,11 @@
  * Created by rebel on 7/6/15.
  */
 import React, { Component } from 'react';
-import './styles/SearchOptionsPopup.css';
+import './styles/MultiSelectPopup.css';
 import SwitchControl from './SwitchControl'
 
 export default
-class SearchOptionsPopup extends Component {
+class MultiSelectPopup extends Component {
     constructor(props) {
         super(props);
 

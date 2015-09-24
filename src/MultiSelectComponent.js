@@ -3,14 +3,14 @@
  */
 import React, { Component } from 'react';
 import ShownOption from './ShownOption';
-import SearchOptionsPopup from './SearchOptionsPopup';
+import MultiSelectPopup from './MultiSelectPopup';
 
 import './styles/shownOption.css';
 
 const log = console.log.bind(console, 'SOC:');
 
 export default
-class SearchOptionsControl extends Component {
+class MultiSelectComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -53,7 +53,8 @@ class SearchOptionsControl extends Component {
         const options = this.state.options;
         let option = options[this.idMap.indexOf(id)];
         option.state = newState;
-        this.setState({options: options})
+        this.setState({options: options});
+        this.props.onSelectionChanged(options.filter(this.filterShown));
     }
 
     setPopupState(newState) {
@@ -129,7 +130,7 @@ class SearchOptionsControl extends Component {
                     </li>
                 </ul>
                 {this.state.open ?
-                    <SearchOptionsPopup options={this.state.options.filter(this.filterFn.bind(this))}
+                    <MultiSelectPopup options={this.state.options.filter(this.filterFn.bind(this))}
                                         changeState={this.changeState.bind(this)}/>
                     :
                     null

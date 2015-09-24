@@ -38,9 +38,11 @@
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.8.2",
-    "csscomb":"^1.0"
+    "csscomb": "^1.0"
   },
   "dependencies": {
-    "react": "^0.13.0"
+    "lodash": "^3.10.1",
+    "react": "^0.13.0",
+    "react-kendo": "^0.13.11"
   }
 }
