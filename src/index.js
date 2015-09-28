@@ -8,6 +8,15 @@ import Products from './dataSource';
 import '../vendor/kendo/styles/kendo.common-material.min.css';
 import '../vendor/kendo/styles/kendo.material.min.css';
 import './styles/kendo.custom.css';
+
+import './styles/b-search-options.css';
+import './styles/filter.css';
+import './styles/MultiSelectComponent.css';
+import './styles/MultiSelectPopup.css';
+import './styles/SelectComponent.css';
+import './styles/shownOption.css';
+import './styles/switchControl.css';
+import './styles/main.css';
 import doneImage from './images/done.png';
 
 
@@ -55,7 +64,7 @@ const log = console.log.bind(console, 'I:');
         },
         resizable: true,
         selectable: "multiple",
-        height: 900,
+        height: 740,
         columns: [
             /* { title: " ", width: 50, template: "#= renderRecordNumber(data) #" },*/
             {
@@ -169,12 +178,9 @@ const log = console.log.bind(console, 'I:');
             }, {
                 field: "FIELD35",
                 title: "ListedOn",
-                width: 180
-            }, {
-                command:{template:'<img src="http://uat.therecongroup.com/Design/Icons/load_complete.png" alt="Repaired" />', className:"vCardButton"},
-                title: "Action",
-                width: 150
-            }]
+                width: 170
+            },
+            { command: [{ name: "edit", template: "<div class='k-button'><span class='k-icon K-I-hbars'></span></div>"}], title: " ", width: 60 }]
     };
     React.render(<k.Grid options={gridOptions}/>, document.getElementById('root'));
 //todo add @2x images

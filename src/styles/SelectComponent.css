@@ -1,0 +1,77 @@
+﻿.filter__controls-wrapper {
+    display: inline-block;
+}
+
+.b-select {
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+    height: 28px;
+}
+
+.b-select:after {
+    content: ' ';
+    height: 100%;
+    display: block;
+    border-left: 1px solid #ccc;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    background: url(../images/chevron-down.png) no-repeat center center;
+    cursor: pointer;
+}
+
+.b-select_state_open {
+    z-index: 2;
+    border-color: #397FD7;
+}
+
+.b-select__popup {
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin: 2px 0 0;
+}
+
+.b-select__list_item {
+    padding: 4px;
+    color: #333;
+    cursor: pointer;
+    height: 28px;
+    line-height: 20px;
+}
+
+.b-select__list_item:hover {
+    background-color: #ccc;
+    color: #222;
+}
+
+.b-select input.b-select__input {
+    border: none;
+    position: relative;
+    height: 28px;
+    vertical-align: top;
+    width: 300px;
+    font-family: 'Lato', sans-serif;
+    color: #444;
+}
+
+
+
+.b-select__clear-filter-button {
+    background: #fff url(../images/cross_gray.png) no-repeat center center;
+    border: none;
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.b-select__list-header {
+    padding: 4px;
+    border-bottom: 1px solid #eee;
+    font-family: 'PT Sans', sans-serif;
+}

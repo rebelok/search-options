@@ -1,32 +1,64 @@
-.b-switch__row{
-    display:flex;
-    justify-content:space-between;
-    flex: auto 1 0;
-    line-height: 24px;
-    cursor:pointer;
+.b-switch__row {
+    line-height: 22px;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 8px;
 }
 
-.b-switch{
+.b-switch__row:hover {
+    background: #397FD7;
+    color: white;
+}
+
+.b-switch {
     outline: none;
-    height:24px;
-    width:70px;
-    border: none;
-    cursor:pointer;
-    background: no-repeat right center;
-}
-.b-switch_type_2{
-    background-image: url(../images/Switch_2_0.png);
-}
-.b-switch_type_3{
-    background-image: url(../images/Switch_3_0.png);
+    cursor: pointer;
+    margin: 0;
+    padding: 0 0 0 22px;
 }
 
-.b-switch_state_1.b-switch_type_2{
-     background-image: url(../images/Switch_2_1.png);
- }
-.b-switch_state_1.b-switch_type_3{
-    background-image: url(../images/Switch_3_1.png);
+.b-switch:after {
+    content: ' ';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    top: 3px;
+    background: no-repeat center center;
 }
-.b-switch_state_2.b-switch_type_3{
-    background-image: url(../images/Switch_3_2.png);
+
+.b-switch_type_2:after {
+    background-image: url(../images/round.png) !important;
+}
+
+.b-switch_type_3:after {
+    background-image: url(../images/round.png) !important;
+}
+
+.b-switch_state_1.b-switch_type_2:after {
+    background-image: url(../images/round_check_blue.png) !important;
+}
+
+.b-switch_state_1.b-switch_type_3:after {
+    background-image: url(../images/round_add_green.png) !important;
+}
+
+.b-switch_state_2.b-switch_type_3:after {
+    background-image: url(../images/round_sub_red.png) !important;
+}
+
+.b-switch__row:hover .b-switch_state_0:after {
+    background-image: url(../images/round_white.png) !important;
+}
+
+.b-switch__row:hover .b-switch_state_1.b-switch_type_2:after {
+    background-image: url(../images/round_check_white.png) !important;
+}
+
+.b-switch__row:hover .b-switch_state_1.b-switch_type_3:after {
+    background-image: url(../images/round_add_white.png) !important;
+}
+
+.b-switch__row:hover .b-switch_state_2.b-switch_type_3:after {
+    background-image: url(../images/round_sub_white.png) !important;
 }

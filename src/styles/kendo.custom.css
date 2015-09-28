@@ -3199,3 +3199,22 @@ body{
     color: #666;
 }
 a{color:#444;}
+.k-grouping-header,
+.k-header.k-grid-toolbar,
+.k-grid .k-header .k-button, .k-scheduler .k-header .k-button, .k-scheduler .k-header li, .k-scheduler .k-header .k-link, .k-gantt > .k-header li, .k-gantt > .k-header .k-link, .k-gantt-toolbar .k-button, .km-pane-wrapper .k-header .k-button{
+  background-color: #3372c1;
+  border-color: #3372c1;
+}
+
+.k-grid tbody .k-button {
+  min-width: 12px;
+}
+
+.k-grid tr.k-state-selected a, .k-grid td.k-state-selected a{
+  color:white;
+}
+
+.k-grid .k-header .k-button:hover, .k-scheduler .k-header .k-button:hover, .k-scheduler .k-scheduler-toolbar .k-scheduler-views li.k-state-hover, .k-scheduler .k-scheduler-toolbar .k-scheduler-views li.k-state-hover .k-link, .k-gantt .k-gantt-toolbar .k-gantt-views li.k-state-hover, .k-gantt .k-gantt-toolbar .k-gantt-views li.k-state-hover .k-link, .k-gantt .k-gantt-toolbar .k-button:hover, .km-pane-wrapper .k-header .k-button:hover{
+  background-color: #2e66ad;
+  border-color: #2e66ad;
+}
